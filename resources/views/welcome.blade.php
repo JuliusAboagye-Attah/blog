@@ -1,6 +1,7 @@
 @extends('layouts.theme')
 
 @section('working_area')
+
     @if(!empty($articles))
 
         @foreach($articles as $article)
@@ -13,6 +14,7 @@
                 <div class="portlet-widgets">
                     <a href="javascript:;" data-toggle="reload"><i class="zmdi zmdi-refresh"></i></a>
                     <a data-toggle="collapse" data-parent="#accordion1" href="ui-cards.html#bg-primary1"><i class="zmdi zmdi-minus"></i></a>
+
                     <a href="ui-cards.html#" data-toggle="remove"><i class="zmdi zmdi-close"></i></a>
                 </div>
                 <div class="clearfix"></div>
@@ -24,6 +26,54 @@
                 <hr>
 
                 <p>Written by: {{$article->user->name}}</p>
+                <br>
+
+                <div class="comments">
+
+                    <ul class="list-group">
+
+                    @foreach ($article->comments as $comment )
+
+                    <li class="list-group-item">
+                        <strong>
+                            {{$comment->created_at->diffForHumans()}}:
+                        </strong>   
+
+                        {{$comment->body}} by {{$article->user->name}}
+
+                    </li>
+
+                    @endforeach
+
+                    </ul>
+
+                </div>
+
+            </hr>
+
+            <div class="card">
+                <div class="card-block">
+                    <form method ="POST" action="/articles/{{ $article->id }}/comments">
+                        {{csrf_field()}}
+
+                        <div class="form-group">
+                            <textarea name="body" placeholder="Enter Your Comments Here." class="form-control" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Add Comment</button>
+                        </div>
+
+
+                    </form>
+
+
+
+                </div>
+
+            </div>
+
+
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="index.html" class="logo">
+            <a href="{{url(route('/home'))}}" class="logo">
                 <i class="zmdi zmdi-toys icon-c-logo"></i><span>Blog<span>Tech</span></span>
                 <!--<span><img src="assets/images/logo.png" alt="logo" style="height: 20px;"></span>-->
             </a>

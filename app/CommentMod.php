@@ -4,22 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class CommentMod extends Model
 {
-    //setting mass assignment
+    // Map Post To comment
     protected $fillable=[
-        'title','description','body'
+        'body','article_id','user_id'
     ];
 
-    //creating relationships
+    public function Article(){
 
-    //$article->user()
+    	return $this->belongsTo(Article::class);
+    }
     public function User(){
         return $this->belongsTo(User::class);
 //        return $this->belongsTo('\App\User','id','user_id');
     }
-    public function comments(){
 
-    	return $this->hasMany(CommentMod::class);
-    }
 }
