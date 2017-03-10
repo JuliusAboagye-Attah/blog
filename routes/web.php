@@ -23,7 +23,6 @@ Route::get('/home', 'HomeController@index');
 Route::group(['middleware'=>'auth'],function(){
  
     Route::resource('article','ArticleController');
-    
 });
 
 Route::post("/articles/{article}/comments","CommentsController@store");
