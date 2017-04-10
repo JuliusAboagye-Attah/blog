@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\CommentMod;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,8 @@ class ArticleController extends Controller
     {
         //
         $articles = Article::with('User')->latest()->get();
-//        dd($articles);
+        //dd($articles);
+        
         return view('welcome',compact('articles'));
     }
 

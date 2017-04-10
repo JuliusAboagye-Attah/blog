@@ -5,7 +5,7 @@
     <div class="topbar-left">
         <div class="text-center">
             <a href="{{url('home')}}" class="logo">
-                <i class="zmdi zmdi-toys icon-c-logo"></i><span>Blog<span>Tech</span></span>
+                <i class="zmdi zmdi-toys icon-c-logo"></i><span>Julius <span>Blog™</span></span>
                 <!--<span><img src="assets/images/logo.png" alt="logo" style="height: 20px;"></span>-->
             </a>
         </div>

@@ -39,7 +39,7 @@
                             {{$comment->created_at->diffForHumans()}}:
                         </strong>   
 
-                        {{$comment->body}} BY <strong>{{$article->user->name}}</strong>
+                        {{$comment->body}} BY <strong>{{$comment->user_id}}</strong>
 
                     </li>
 
